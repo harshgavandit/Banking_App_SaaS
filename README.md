@@ -1,5 +1,23 @@
 # Fintech Banking Application
 
+## Public read-only portfolio demo
+
+The `frontend` client includes `/demo`: a public sample workspace requiring no account, database, provider credentials or API server. All records are fictional local fixtures. Existing account sign-in routes remain available separately.
+
+LendFlow shows borrower origination with amount validation (try `500` and `12000`), a lender document-review checklist, and a fictional repayment schedule. Nothing is submitted, approved, invested or paid. The payment SDK loads only from the existing payment action, never from the public demo. The authenticated application remains an educational prototype; this change does not assert production credit, payment or security readiness.
+
+```powershell
+cd frontend
+npm ci
+npm run dev -- --host 127.0.0.1 --port 5192 --strictPort
+# Open http://127.0.0.1:5192/demo
+node --test tests/demo.test.mjs
+npm run build
+```
+
+Static hosting must rewrite client-side routes such as `/demo` to `index.html`. Local build and sample checks do not prove the deployed site has received this revision or that live authenticated services work.
+
+
 A full-stack peer-to-peer lending platform that connects **Admins**, **Lenders**, and **Borrowers** through a secure, role-based web application. The platform handles the complete loan lifecycle — from application and review to disbursement, repayment tracking, and reporting.
 
 ---

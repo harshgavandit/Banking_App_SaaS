@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
@@ -40,6 +40,8 @@ const SignIn = () => {
         <img src={auth} alt="SignIn" className="object-cover w-full h-full" />
       </div>
       <div className="md:w-1/2 w-full flex flex-col justify-center px-8 md:px-16 bg-white">
+        <Link to="/" className="text-xl font-bold text-indigo-700 mb-3">LendFlow</Link>
+        <Link to="/demo" className="text-indigo-600 underline mb-4">Explore the read-only sample demo</Link>
         <h2 className="text-3xl font-bold mb-6 text-center md:text-left">Welcome Back!</h2>
         <form onSubmit={handleSignIn}>
           <div className="mb-4">
@@ -67,7 +69,7 @@ const SignIn = () => {
           </button>
         </form>
         <div className="mt-4 text-center">
-          <Link to="/register" className="text-indigo-600 hover:underline">Don't have an account? Register</Link>
+          <Link to="/register" className="text-indigo-600 hover:underline">Don&apos;t have an account? Register</Link>
         </div>
         <ToastContainer />
       </div>

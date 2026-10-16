@@ -1,22 +1,21 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import hero from '../../assets/hero.png';
 
 const HeroSection = () => {
   return (
-    <section className="bg-blue-600 text-white w-full h-screen flex flex-col md:flex-row justify-between items-center pt-20 md:pt-0 px-8 md:px-16">
+    <section className="bg-blue-600 text-white w-full min-h-screen flex flex-col md:flex-row justify-between items-center pt-20 md:pt-0 px-8 md:px-16">
       {/* Left Side - Text */}
       <div className="flex flex-col justify-center items-start space-y-4 md:w-1/2">
         <h1 className="text-4xl md:text-6xl font-bold">
-          Invest & Save for a Brighter Future
+          LendFlow: follow the lending journey
         </h1>
         <p className="text-lg md:text-2xl">
-          Secure your financial future with personalized investment and savings plans.
+          Explore origination, lender review and repayment tracking in a read-only sample workspace.
         </p>
         <div className="space-x-4 mt-4">
-          <Link to="/register">
+          <Link to="/demo">
             <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg text-lg transition duration-300">
-              Get Started
+              Explore sample demo
             </button>
           </Link>
           <Link to="/signin">

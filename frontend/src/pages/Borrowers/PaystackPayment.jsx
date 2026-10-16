@@ -8,6 +8,20 @@ const PaystackPayment = () => {
   const [currency, setCurrency] = useState('USD'); // Default currency set to USD
 
   const handlePaystackPayment = async () => {
+    if (!window.PaystackPop) {
+      try {
+        await new Promise((resolve, reject) => {
+          const script = document.createElement('script');
+          script.src = 'https://js.paystack.co/v1/inline.js';
+          script.onload = resolve;
+          script.onerror = reject;
+          document.head.appendChild(script);
+        });
+      } catch {
+        window.alert('Payment service could not load. Please try again.');
+        return;
+      }
+    }
     const publicKey = 'your_paystack_public_key'; // Replace with your Paystack public key
     const paymentHandler = window.PaystackPop.setup({
       key: publicKey,

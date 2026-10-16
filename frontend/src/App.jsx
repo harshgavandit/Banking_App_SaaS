@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import Demo from './demo/Demo';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/LandingPage/Home';
 import Register from './auth/Register';
 import SignIn from './auth/SignIn';
@@ -42,10 +42,11 @@ const App = () => {
     <Router>
       <div className="flex">
 
-        <div className="flex-1 p-0">
+        <div className="flex-1 min-w-0 p-0">
           <Routes>
 
             <Route path="/" element={<Home />} />
+            <Route path="/demo" element={<Demo />} />
             <Route path="/register" element={<Register />} />
             <Route path="/signin" element={<SignIn />} />
 

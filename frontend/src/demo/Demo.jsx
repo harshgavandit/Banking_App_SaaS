@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { sampleApplication as loan, repaymentSchedule, validateSampleRequest } from './model.mjs';
 import './demo.css';
 
@@ -10,7 +9,7 @@ export default function Demo() {
   const [amount, setAmount] = useState('12000');
   const [message, setMessage] = useState('');
   return <div className="lend-demo">
-    <header className="lend-top"><Link to="/" className="lend-brand">LendFlow <span> / product demo</span></Link><Link to="/signin">Live app sign in →</Link></header>
+    <header className="lend-top"><a href="/" className="lend-brand">LendFlow <span> / product demo</span></a><a href="/signin">Live app sign in →</a></header>
     <main className="lend-main">
       <div className="lend-intro"><p className="lend-eyebrow">BORROW · REVIEW · REPAY</p><h1>A loan journey, made visible.</h1><p>Explore how borrowers and lenders move through the same application.</p></div>
       <aside className="lend-notice"><strong>Read-only sample workspace.</strong> All names, amounts, statuses and dates are fictional fixtures. Nothing is submitted, approved, funded or paid. This demo uses no account, payment provider, credit check or live underwriting.</aside>
@@ -22,7 +21,7 @@ export default function Demo() {
           {view === 'Lender review' && <><p>Review a fictional request using the lender queue pattern. The status is a stored sample, not a risk score or automated recommendation.</p><dl className="lend-summary"><div><dt>Borrower</dt><dd>{loan.borrower}</dd></div><div><dt>Requested</dt><dd>{money(loan.amount)}</dd></div><div><dt>Review stage</dt><dd>Document checks</dd></div></dl><h3>Review checklist</h3><ul className="lend-checklist"><li>✓ Purpose of funds supplied</li><li>✓ Requested term supplied</li><li>○ Identity and income evidence awaiting review</li></ul><div className="lend-inactive">Approval and investment actions are unavailable in this public workspace.</div></>}
           {view === 'Repayments' && <><p>Illustrative schedule for a separate funded sample loan. Amounts are fixtures and are not calculated offers or payment instructions.</p><div className="lend-table-scroll"><table><caption>Sample repayment schedule · LF-0988</caption><thead><tr><th scope="col">Due date</th><th scope="col">Amount</th><th scope="col">Status</th></tr></thead><tbody>{repaymentSchedule.map(row => <tr key={row.date}><td>{row.date}</td><td>{money(row.amount)}</td><td>{row.status}</td></tr>)}</tbody></table></div><div className="lend-inactive">Payments and bank details are unavailable. No money can move from this demo.</div></>}
         </section>
-      </div><footer className="lend-footer">LendFlow · Independent lending workflow portfolio project · <Link to="/">About the project</Link></footer>
+      </div><footer className="lend-footer">LendFlow · Independent lending workflow portfolio project · <a href="/">About the project</a></footer>
     </main>
   </div>;
 }

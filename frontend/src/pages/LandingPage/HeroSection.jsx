@@ -13,11 +13,11 @@ const HeroSection = () => {
           Explore origination, lender review and repayment tracking in a read-only sample workspace.
         </p>
         <div className="space-x-4 mt-4">
-          <Link to="/demo">
+          <a href="/?demo=1">
             <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg text-lg transition duration-300">
               Explore sample demo
             </button>
-          </Link>
+          </a>
           <Link to="/signin">
             <button 
             className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-600

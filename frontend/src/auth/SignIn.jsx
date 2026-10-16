@@ -41,7 +41,7 @@ const SignIn = () => {
       </div>
       <div className="md:w-1/2 w-full flex flex-col justify-center px-8 md:px-16 bg-white">
         <Link to="/" className="text-xl font-bold text-indigo-700 mb-3">LendFlow</Link>
-        <Link to="/demo" className="text-indigo-600 underline mb-4">Explore the read-only sample demo</Link>
+        <a href="/?demo=1" className="text-indigo-600 underline mb-4">Explore the read-only sample demo</a>
         <h2 className="text-3xl font-bold mb-6 text-center md:text-left">Welcome Back!</h2>
         <form onSubmit={handleSignIn}>
           <div className="mb-4">
